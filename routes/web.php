@@ -14,14 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-App::setLocale('en');//cambiar lenguaje dinamicamente
+App::setLocale('es');//cambiar lenguaje dinamicamente
 
 Route::view('/','home')->name('home');
 Route::view('/quienes-somos','about')->name('about');
 
-
-Route::get('/portafolio','ProjectController@index')->name('project.index');
-Route::get('/portafolio/{id}','ProjectController@show')->name('project.show');
+Route::resource('/portafolio', 'ProjectController')->names('project');
 
 Route::view('/contactos','contact')->name('contact');
 Route::post('/contactos','ConctactController@store')->name('contact');

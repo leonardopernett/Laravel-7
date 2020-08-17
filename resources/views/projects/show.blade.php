@@ -6,6 +6,15 @@
 
 
    <h1>{{ $project->title}}</h1>
-    <p>  {{ $project->description}}</p>
+
+
+   <a href="{{route('project.edit', $project->id)}}">editar</a>
+
+     <form action="{{route('project.destroy', $project->id)}}" method="POST">
+     	@csrf @method('DELETE')
+     	<button type="">delete</button>
+     </form>
+
+    <p> {{ $project->description}}</p>
     <p>{{ $project->created_at->diffForHumans()}}</p>
 @endsection

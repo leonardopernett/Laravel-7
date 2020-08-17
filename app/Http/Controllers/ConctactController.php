@@ -20,6 +20,6 @@ class ConctactController extends Controller
 
     Mail::to('pernettleonardo@gmail.com')->send(new Message($message));
 
-        return "mensaje enviado";
+        return back()->with('flash','recibimos tu mensaje, respoderemos en menos 24 horas gracias');
     }
 }
