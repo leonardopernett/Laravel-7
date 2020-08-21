@@ -14,12 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 App::setLocale('es');//cambiar lenguaje dinamicamente
 
 Route::view('/','home')->name('home');
+
 Route::view('/quienes-somos','about')->name('about');
-
 Route::resource('/portafolio', 'ProjectController')->names('project');
-
 Route::view('/contactos','contact')->name('contact');
 Route::post('/contactos','ConctactController@store')->name('contact');
+
+Auth::routes(['register'=>false]);
+
+//Route::get('/home', 'HomeController@index')->name('home');

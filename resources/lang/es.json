@@ -2,5 +2,7 @@
 	"Contact":"Contacto",
 	"Home":"Inicio",
 	"About":"Quienes somos",
-	"Project":"Projectos"
+	"Project":"Projectos",
+	"Login":"Entrar",
+	"Register":"Registrar"
 }

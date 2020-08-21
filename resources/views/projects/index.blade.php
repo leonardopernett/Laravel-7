@@ -6,7 +6,7 @@
 @section('content')
     <h1>@lang('Project')</h1>
 
-      <a href="{{route('project.create')}}">create project</a><br>
+      @auth  <a href="{{route('project.create')}}">create project</a><br> @endauth
 
       <!-- message session-->
       @include('partial.session')

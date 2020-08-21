@@ -25,5 +25,23 @@
 			     @lang('Contact')
 		     </a>
 		    </li>
+		    @guest
+            <li>
+			   <a class="{{setActive('login')}}"  href="{{route('login')}}">
+			     @lang('Login')
+		       </a>
+		    </li>
+		    @else
+              <li>
+			   <a class="{{setActive('logout')}}"  href="{{route('logout')}}"  onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+			     @lang('Logout')
+		       </a>
+		    </li>
+
+		    @endauth
 		</ul>
 	</nav>
+
+     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+      </form>
